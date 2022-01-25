@@ -1,0 +1,37 @@
+.clipboard {
+    $root: &;
+    margin-bottom: 66px;
+
+    &.active {
+        #{$root}__hero {
+            animation: clipboard-slide-down 1500ms forwards;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    &__heading {
+        margin-bottom: 20px;
+    }
+
+    &__subheading {
+        margin-bottom: 50px;
+        max-width: 720px;
+
+        @media (min-width: 769px) {
+            margin-bottom: 100px;
+        }
+    }
+
+    &__hero {
+        opacity: 0;
+        
+        img {
+            width: 100%;
+        }
+    }
+}

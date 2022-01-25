@@ -1,0 +1,154 @@
+/* Headings */
+.h {
+    color: $c-blue-grayish-dark;
+    font-weight: 600;
+    text-align: center;
+
+    &--large {
+        font-size: 1.66rem;
+
+        @media (min-width: 769px) {
+            font-size: 2.48rem;
+        }
+    }
+
+    &--big {
+        font-size: 1.61rem;
+
+        @media (min-width: 769px) {
+            font-size: 1.93rem;
+        }
+    }
+
+    &--med {
+        font-size: 1.22rem;
+
+        @media (min-width: 769px) {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+/* Paragrahps */
+.text {
+    color: $c-blue-grayish;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.5;
+
+    &--big {
+        font-size: 0.9rem;
+
+        @media (min-width: 768px) {
+            font-size: 1.13rem;
+        }
+    }
+
+    &--med {
+        font-size: 0.9rem;
+        line-height: 1.7;
+
+        @media (min-width: 768px) {
+            font-size: 1.01rem;
+        }
+    }
+
+    &--small {
+        font-size: 0.9rem;
+        line-height: 1.6;
+
+        @media (min-width: 768px) {
+            font-size: 0.88rem;
+        }
+    }
+}
+
+/* Buttons */
+.btn {
+    position: relative;
+    font-family: $ff-primary;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #fff;
+    border: none;
+    width: 100%;
+    height: 51px;
+    border-radius: 50px;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+
+    @media (min-width: 769px) {
+        height: 55px;
+        width: 224px;
+        font-size: 1rem;
+    }
+
+    &:focus {
+        outline: 1px dashed transparentize($c-blue-light, 0.8);
+        outline-offset: 5px;
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 300ms ease-in-out;
+    }
+
+    &--cyan {
+        background: $c-cyan-strong;
+        border-bottom: 3px solid darken($c-cyan-strong, 10);
+        margin-bottom: 20px;
+        box-shadow: 0 8px 20px transparentize($c-cyan-strong, 0.6);
+        animation: btn-shake-1 1000ms ease-in;
+
+        &::before {
+            background: lighten($c-cyan-strong, 5);
+        }
+
+        &:hover {
+            border-color: $c-cyan-strong;
+            transform: scale(0.98);
+            
+            &::before {
+                transform: scaleY(1);
+                transform-origin: top;
+            }
+        }
+
+        @media (min-width: 769px) {
+            margin-bottom: 0;
+            margin-right: 20px;
+        }
+    }
+
+    &--blue {
+        background: $c-blue-light;
+        border-bottom: 3px solid darken($c-blue-light, 5);
+        box-shadow: 0 8px 20px transparentize($c-blue-light, 0.6);
+        animation: btn-shake-2 1000ms ease-in;
+        
+        &::before {
+            background: lighten($c-blue-light, 5);
+        }
+
+        &:hover {
+            border-color: $c-blue-light;
+            transform: scale(0.98);
+
+            &::before {
+                transform: scaleY(1);
+                transform-origin: top;
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap');
+
+html {
+    font-size: 18px;
+}
+
+body {
+    font-family: $ff-primary;
+    background: url('../../assets/img/bg-header-mobile.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+    padding: 0 31px;
+
+    @media (min-width: 769px) {
+        background: url('../../assets/img/bg-header-desktop.png');
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: contain;
+    }
+}
